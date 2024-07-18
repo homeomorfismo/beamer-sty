@@ -1,7 +1,9 @@
-UCL LaTeX Beamer theme [![Build Status](https://travis-ci.com/UCL/ucl-beamer.svg?branch=master)](https://travis-ci.com/UCL/ucl-beamer)
+General LaTeX Beamer theme 
 ======================
 
-by Simon Byrne (based on the original template by Maurizio Filippone)
+adapted by Gabriel Pinochet-Soto,
+based on the original UCL Beamer theme by Simon Byrne,
+which was based on the original template by Maurizio Filippone
 
 These files form a theme for the Beamer package in LaTeX that is a close approximation to the [UCL Corporate Identity](http://www.ucl.ac.uk/corporate-identity). 
 
@@ -22,7 +24,8 @@ An appropriate place would be `<texmf>/tex/latex/uclbeamer`
 Use
 ----
 
-The usage of the theme and its many options are given in the file `sample.tex`. 
+The usage of the theme and its many options are given in [USAGE.md](USAGE.md).
+A simple example is given in the file `sample.tex`. 
 
 It can also be used for constructing a poster: a rough implementation is given in `sample-poster.tex`, however there are still some issues with spacing that need to be sorted out.
 
@@ -30,7 +33,19 @@ It can also be used for constructing a poster: a rough implementation is given i
 Notes
 -----
 
-By default, the package uses the Helvetica font, as Arial (the official UCL typeface) is not installed on most TeX distributions. If you really want Arial, then you should be able to get it working using the following steps:
+PSU uses the Acumin font. See [INSTALL_ACUMIN.md](INSTALL_ACUMIN.md) for instructions on how to install it.
+
+Once you have the Acumin font installed, you can use it in your LaTeX document by adding the following lines to the preamble:
+```latex
+\usepackage{acumin}
+% ...
+{\acumin This text will be in Acumin.}
+\textacumin{This text will also be in Acumin.}
+% \textsf{This text will be in Acumin.}
+```
+
+You can also install Arial (the official UCL typeface).
+If you really want Arial, then you should be able to get it working using the following steps:
 
 1. Install the font using the `getnonfreefonts` script from http://www.tug.org/fonts/getnonfreefonts/.
 
@@ -45,9 +60,6 @@ updmap-sys --enable Map=ua1.map
 \usepackage{uarial}
 \renewcommand{\familydefault}{\sfdefault}
 ```
-
-If you're wondering how to tell them apart, the only difference appears to be that Arial doesn't have the downstroke on the G.
-
 
 Support
 -------
