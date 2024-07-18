@@ -1,0 +1,77 @@
+%\mode<presentation>
+\RequirePackage{psu-colors}
+\RequirePackage{etoolbox}
+
+
+% Determines the PSU colour name of the template in the 1st argument, and
+% stores it in the 2nd argument. This is used to determine which banner image
+% should be included
+%
+% Should probably change to raise a \@latex@error if non-PSU colour is used,
+% but currently will just leave psu-green as the default
+\newcommand\psucolorname[2]{%
+  \extractcolorspec{#1}{\psu@colorspec@current}%
+  \forcsvlist{\psu@colorcheck{#2}}{%
+      psu-green,psu-electric-green,psu-forest-green,psu-white,psu-black,psu-red,%
+      psu-sand,psu-blue,psu-light-blue,psu-stone,psu-yellow,psu-orange,psu-purple%
+  }%
+}
+
+% Helper function to check if the current colour is the same as the one being
+\newcommand\psu@colorcheck[2]{%
+  \extractcolorspec{#2}{\psu@colorspec@check}%
+  \ifdefequal{\psu@colorspec@check}{\psu@colorspec@current}{\gdef#1{#2}}{}%
+}
+
+% This is the main variable to customise
+\setbeamercolor{banner}{bg=psu-green,fg=psu-white}
+
+% title on title page
+\setbeamercolor{title}{parent=banner}
+
+% used for structural elements
+\setbeamercolor{structure}{use=banner,fg=banner.bg}
+
+% used for normal text
+\setbeamercolor{frametitle}{fg=psu-green}
+
+% used for \alert
+\setbeamercolor{alerted text}{fg=psu-red}
+
+% used in the example environment
+\setbeamercolor{example text}{fg=psu-forest-green}
+
+\setbeamercolor{block title}{parent=banner}
+
+%%% can use the following for a striped
+\setbeamercolor{block body}{use=block title,bg=block title.bg!30, fg=psu-black}
+
+\setbeamercolor{block title alerted}{use=alerted text,%
+    bg=alerted text.fg,fg=psu-white}
+
+\setbeamercolor{block body alerted}{use=block title alerted,%
+    bg=block title alerted.bg!30,fg=psu-black}
+
+\setbeamercolor{block title example}{use=example text,%
+    bg=example text.fg,fg=psu-white}
+
+\setbeamercolor{block body example}{use=block title example,%
+    bg=block title example.bg!30,fg=psu-black}
+
+% used for section and miniframes headline templates
+\setbeamercolor*{section in head/foot}{use=banner,%
+  fg=banner.fg!70!banner.bg,bg=banner.fg!20!banner.bg}
+
+\setbeamercolor*{subsection in head/foot}{use=banner,%
+  fg=banner.fg!50!banner.bg,bg=banner.fg!20!banner.bg}
+
+% used for footline template
+\setbeamercolor*{footline}{parent={banner,banner stripe}}
+
+\setbeamercolor*{author in head/foot}{parent=footline}
+
+\setbeamercolor*{title in head/foot}{parent=footline}
+
+\setbeamercolor*{date in head/foot}{parent=footline}
+
+%\mode<all>

@@ -1,19 +1,14 @@
 \documentclass{beamer}
-\usetheme{ucl}
+\usetheme{psu}
 
 %%% Increase the height of the banner: the argument is a scale factor >=1.0
-% \setbeamertemplate{banner}[ucl][1.5]
+\setbeamertemplate{banner}[blank]
 
-%%% Change the colour of the main banner
-%%% The background should be one of the UCL colours (except pink or white):
-%%%   black,darkpurple,darkred,darkblue,darkgreen,darkbrown,richred,midred,
-%%%   navyblue,midgreen,darkgrey,orange,brightblue,brightgreen,lightgrey,
-%%%   lightpurple,yellow,lightblue,lightgreen,stone
 % \setbeamercolor{banner}{bg=darkpurple}
 % \setbeamercolor{banner}{bg=yellow,fg=black}
 
 %%% Add a stripe behind the banner
-% \setbeamercolor{banner stripe}{bg=brightblue,fg=black}
+% \setbeamercolor{banner stripe}{bg=psu-sand,fg=psu-black}
 
 %%% The main structural elements
 % \setbeamercolor{structure}{fg=black}
@@ -50,7 +45,7 @@
 % \logo{\includegraphics[width=0.12\paperwidth]{csml_logo}}
 
 %%% Set a background colour
-% \setbeamercolor{background canvas}{bg=lightgrey}
+\setbeamercolor{background canvas}{bg=psu-sand}
 
 %%% Set a background image
 %%% Some sample images are available from the UCL image store:
@@ -182,12 +177,12 @@
 
 %%% customise the colors
 \setbeamercolor{section in head/foot}{fg=white}
-\setbeamercolor{subsection in head/foot}{fg=banner.fg!80!banner.bg}
+% \setbeamercolor{subsection in head/foot}{fg=banner.fg!80!banner.bg}
 
 %%% UCL logo can also be customised
-\setbeamertemplate{banner}[ucl]
-\setbeamercolor{banner}{bg=black}
-\setbeamercolor{banner stripe}{bg=brightblue,fg=black}
+\setbeamertemplate{banner}[psu]
+% \setbeamercolor{banner}{bg=psu-sand}
+% \setbeamercolor{banner stripe}{bg=psu-sand,fg=psu-black}
 
 \begin{frame}
   \frametitle{Slide with custom headline}
