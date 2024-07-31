@@ -5,19 +5,41 @@
 % See https://www.pdx.edu/university-communications/tools-and-templates/brand-colors
 \selectcolormodel{cmyk}
 
+% Define a color in terms of cmyk from 0-255 to 0-1
+\def\defineCMYKcolor(#1,#2,#3,#4)#5{%
+    \pgfmathsetmacro{\myc}{#1/255}%
+    \pgfmathsetmacro{\mym}{#2/255}%
+    \pgfmathsetmacro{\myy}{#3/255}%
+    \pgfmathsetmacro{\myk}{#4/255}%
+    \definecolor{#5}{cmyk}{\myc,\mym,\myy,\myk}%
+}
+
 % Primary pallet
-\definecolor{psu-green}{cmyk}{40,0,100,38}
-\definecolor{psu-electric-green}{cmyk}{27,3,100,0}
-\definecolor{psu-forest-green}{cmyk}{71,40,80,68}
-\definecolor{psu-white}{cmyk}{0,0,0,0}
-\definecolor{psu-black}{cmyk}{0,0,0,100}
+% \definecolor{psu-green}{cmyk}{40,0,100,38}
+% \definecolor{psu-electric-green}{cmyk}{27,3,100,0}
+% \definecolor{psu-forest-green}{cmyk}{71,40,80,68}
+% \definecolor{psu-white}{cmyk}{0,0,0,0}
+% \definecolor{psu-black}{cmyk}{0,0,0,100}
+\defineCMYKcolor(40,0,100,38){psu-green}
+\defineCMYKcolor(27,3,100,0){psu-electric-green}
+\defineCMYKcolor(71,40,80,68){psu-forest-green}
+\defineCMYKcolor(0,0,0,0){psu-white}
+\defineCMYKcolor(0,0,0,100){psu-black}
 
 % Secondary pallet
-\definecolor{psu-red}{cmyk}{4,87,98,0}
-\definecolor{psu-sand}{cmyk}{0,8,35,10}
-\definecolor{psu-blue}{cmyk}{100,7,0,20}
-\definecolor{psu-light-blue}{cmyk}{32,0,0,0}
-\definecolor{psu-stone}{cmyk}{40,30,60,18}
-\definecolor{psu-yellow}{cmyk}{0,25,100,0}
-\definecolor{psu-orange}{cmyk}{0,55,100,0}
-\definecolor{psu-purple}{cmyk}{48,100,0,40}
+% \definecolor{psu-red}{cmyk}{4,87,98,0}
+% \definecolor{psu-sand}{cmyk}{0,8,35,10}
+% \definecolor{psu-blue}{cmyk}{100,7,0,20}
+% \definecolor{psu-light-blue}{cmyk}{32,0,0,0}
+% \definecolor{psu-stone}{cmyk}{40,30,60,18}
+% \definecolor{psu-yellow}{cmyk}{0,25,100,0}
+% \definecolor{psu-orange}{cmyk}{0,55,100,0}
+% \definecolor{psu-purple}{cmyk}{48,100,0,40}
+\defineCMYKcolor(4,87,98,0){psu-red}
+\defineCMYKcolor(0,8,35,10){psu-sand}
+\defineCMYKcolor(100,7,0,20){psu-blue}
+\defineCMYKcolor(32,0,0,0){psu-light-blue}
+\defineCMYKcolor(40,30,60,18){psu-stone}
+\defineCMYKcolor(0,25,100,0){psu-yellow}
+\defineCMYKcolor(0,55,100,0){psu-orange}
+\defineCMYKcolor(48,100,0,40){psu-purple}
